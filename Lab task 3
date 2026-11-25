@@ -1,0 +1,265 @@
+##List(Easy)
+#Append()
+a=[1,2,3,4,5]
+a.append(27)
+print(a)
+
+#Extend()
+a=[1,2,3,4,5]
+a.extend([16,9,6])
+print(a)
+
+#insert()
+a=[1,2,3,4,5]
+a.insert(59,19)
+print(a)
+
+#remove()
+a=[1,2,3,4,5]
+a.remove(5)
+print(a)
+
+#pop()
+a=[1,2,3,4,5]
+a.pop(3)
+print(a)
+
+#clear()
+a=[1,2,3,4,5]
+a.clear()
+print(a)
+
+##Tuple
+#count()
+b=(1,1,3,3,6,6,6,8,9,7)
+print(b.count(6))
+#index()
+print(b.index(9))
+#program to displau the first,middle and last elements of tuple
+print("first element",b[0])
+print("Middle element",len(b)//2)
+print("last element",b[-1])
+#program to reverse a tuple using slicing
+reversed_tuple = b[::-1]
+print("Reversed tuple:", reversed_tuple)
+
+##Set
+#add()
+y={1,4,4,4,5,5,6,7,8,9,10}
+y.add(27)
+print(y)
+#update()
+y.update([25,78,98])
+print(y)
+#remove()
+y.remove(7)
+print(y)
+#discard()
+y.discard(10)
+print(y)
+#pop()
+y.pop()
+print(y)
+#clear()
+y.clear()
+print()
+
+##Dictionary
+#get()
+z={1:"leather shoe",2:"school bag",3:"pouch",4:"specs",5:"books"}
+print(z.get(1))
+print(z)
+#keys()
+print(z.keys())
+print(z)
+#values()
+print(z.values())
+#items()
+print(z.items())
+#add new key-value pair to dictionary
+z.update({6:"cycle"})
+print(z)
+#update the value of existing key in dictionary
+z.update({6:"by bus"})
+print(z)
+
+##List(Medium level)
+#index()
+fruits=["apple","orange","pineapple","kiwi","dragonfruit"]
+position = fruits.index("orange")
+print("position of element:",position)
+#Count()
+print(fruits.count("orange"))
+#sort()
+fruits.sort()
+print("Ascending order",fruits)
+fruits.sort()
+print("descending order",fruits)
+#reverse()
+reverse=fruits[::-1]
+print("reversed list",reverse)
+#extend()
+fruits.extend(["banana","watermelon"])
+print(fruits)
+
+##Tuple
+#tuples using concatenation
+a=(4,5)
+b=(6,7)
+c=a+b
+result=(a+b)
+print(result)
+#repetition operator
+a=(5,6,7)
+b=a*3
+print("repeated tuple",b)
+#common elements b/w two tuples
+a=(3,4,5,6,7,8,9)
+b=(6,7,8,9,10,2,7)
+for i in a:
+   if i in b:
+      print(i)
+#program to seperate even and odd numbers from a tuple into different tuples
+##set
+#union
+a={1,2,3,4,50,60}
+b={40,50,60,80}
+print(a.union(b))
+#intersection
+print(a.intersection(b))
+#difference
+print(a.difference(b))
+#symmetric_difference
+print(a.symmetric_difference(b))
+#issubset
+print(a.issubset(b))
+print(b.issubset(a))
+#issuperset
+print(a.issuperset(b))
+print(b.issuperset(a))
+#isdisjoint
+print(a.isdisjoint(b))
+
+##dictionary
+z={"1":"leather shoe","2":"school bag","3":"pouch","4":"specs","5":"books"}
+#pop
+z.pop("1")
+print(z)
+#pop item
+z.popitem()
+print(z)
+#update
+z.update({"6":"stationery"})
+print(z)
+#set default
+z.setdefault("books")
+print(z)
+#copy
+y=z.copy()
+print('y:',y)
+
+##List(Hard)
+#program to find the second largest number in a list without using sort or max
+a = [5,6,7,8,9,10]
+largest = a[0]
+secondlargest = a[0]
+for i in a:
+    if i > largest:
+        secondlargest = largest
+        largest = i
+    elif i > secondlargest and i != largest:
+        secondlargest = i
+print("Second largest number:", secondlargest)
+#program to rotate a list three positions to the left using slicing.
+a = [5,6,7,8,9,10]
+n = 3
+a = a[n:] + a[:n]
+print(a)
+# program to remove duplicate elements from a list without using `set()`
+a = [27,37,47,57,67]
+b = []
+for i in a:
+    if i not in b:
+        b.append(i)'''
+'''##Tuple
+#merge 2 tuples,sort the elements in ascending order and convert result back into tuple
+a=(2,4,5,7,8)
+b=(3,6,9,12)
+c=a+b
+result=(a+b)
+print("merged tuple",c)
+result=list(c)
+#sort
+result.sort()
+result=tuple(result)
+print("Ascending order",result)
+print(result)
+#remove a given element from a tuple by converting it into a list and back into tuple
+a=(1,2,3,4,5,6,7)
+b=list(a)
+b.remove(5)
+print(b)
+b=tuple(b)
+print(b)
+##set
+#find the common elements among three sets
+a={11,12,13,14}
+b={13,14,15,16}
+c={13,14,15,67}
+print(a.intersection(b,c))
+#unique elements from two sets without using union
+a={23,24,25,26,27}
+b={23,24,47,48,38}
+c = []
+for i in a:
+    if i not in c:
+        c.append(i)
+for i in b:
+    if i not in c:
+        c.append(i)
+result = set(c)
+print("Unique elements:", result)
+
+##dictionary
+#dictionary of 5 subjects
+subjects = ("Python", "Maths", "English", "Science", "Computer")
+marks = dict.fromkeys(subjects, 0)
+print(marks)
+#student who scored highest mark
+a = {"Arun": 85,"Bala": 90,"Divya": 95,"Priya": 88}
+highest = 0
+student = ""
+for i in a:
+    if a[i] > highest:
+        highest = a[i]
+        student = i
+print("Highest scoring student:", student)
+print("Highest mark:", highest)
+
+##slicing-practice questions
+# display the first 5 elements of a list using slicing.
+a=[1,2,3,4,5,6,7,8,9,12]
+print(a[0:5:1])
+#last 5 elements
+print(a[-5:])
+#reverse a list
+print(a[::-1])
+#display alternate elements from a list
+print(a[0:11:2])
+#extract elements from index2 to index 7 using slicing
+print(a[2:7])
+#divide a list into 2 halves
+mid=(len(a))//2
+firsthalf = a[:mid]
+secondhalf = a[mid:]
+print("First half:", firsthalf)
+print("Second half:", secondhalf)
+#rotate a list to the right by 2 positions using slicing
+
+
+
+
+
+
+
+   
